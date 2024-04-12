@@ -3,6 +3,7 @@ import "./globals.css";
 
 const inter = Inter({ subsets: ["latin"] });
 
+import { Suspense } from 'react'
 import Header from "@/components/Header";
 
 export const metadata = {
@@ -15,7 +16,9 @@ const RootLayout = ({ children }) => {
     <html lang="en">
       <body className={inter.className}>
         <Header />
-        {children}
+        <Suspense>
+          {children}
+        </Suspense>
       </body>
     </html>
   );
